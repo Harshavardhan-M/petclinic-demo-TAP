@@ -1,4 +1,11 @@
 pipeline {
+
+environment {
+    registry = "magadi0961/petclinic"
+    registryCredential = 'docker_hub_magadi0961'
+    dockerImage = ''
+  }
+
 agent any
   stages{
     stage ('Build') {
