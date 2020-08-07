@@ -5,7 +5,6 @@ environment {
     registryCredential = 'docker_hub_magadi0961'
     dockerImage = ''
   }
-
 agent any
   stages{
     stage ('Build') {
