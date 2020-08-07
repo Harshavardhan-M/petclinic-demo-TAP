@@ -1,11 +1,10 @@
 
-pipeline {
-  agent any
+agent any
   stages{
     stage ('Build') {
       steps{
-        echo "Building Project
-           sh './mvnw package'
+        echo "Building Project"
+        sh './mvnw package'
       }
     }
     stage ('Archive') {
