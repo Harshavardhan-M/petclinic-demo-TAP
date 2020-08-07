@@ -1,7 +1,7 @@
  pipeline {
   environment {
-    registry = "magadi0961/petclinic"
-    registryCredential = 'docker_hub_magadi0961'
+    registry = "harsha0961/petclinic"
+    registryCredential = 'docker_hub_harsha0961'
     dockerImage = ''
   }
   agent any
@@ -32,7 +32,7 @@
         script {
           docker.withRegistry( '', registryCredential ) {
               dockerImage.push()
-              dockerImage.push('latest')
+              
           }
         }
       }
