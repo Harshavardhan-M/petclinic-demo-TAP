@@ -1,11 +1,10 @@
-pipeline {
-
-environment {
+ pipeline {
+  environment {
     registry = "magadi0961/petclinic"
     registryCredential = 'docker_hub_magadi0961'
     dockerImage = ''
   }
-agent any
+  agent any
   stages{
     stage ('Build') {
       steps{
@@ -27,13 +26,13 @@ agent any
         }
       }
     }
-   stage ('Push Docker Image') {
+    stage ('Push Docker Image') {
       steps{
         echo "Pushing Docker Image"
         script {
           docker.withRegistry( '', registryCredential ) {
               dockerImage.push()
-               
+              dockerImage.push('latest')
           }
         }
       }
